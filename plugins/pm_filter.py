@@ -33,17 +33,6 @@ BUTTONS = {}
 SPELL_CHECK = {}
 FILTER_MODE = {}
 
-@Client.on_callback_query()
-async def cb_handler(client: Client, query: CallbackQuery):
-    if query.data == "alimovie":
-        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ In ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Iron man\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)", show_alert=True)
-
-    elif query.data == "aliseries":
-        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ Series ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴍᴏɴᴇʏ ʜᴇɪsᴛ S01E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)", show_alert=True)
-
-    elif query.data == "alitips":
-        await query.answer("▣ ᴛɪᴘs ▣\n\n★ ᴛʏᴘᴇ ᴄᴏʀʀᴇᴄᴛ sᴘᴇʟʟɪɴɢ (ɢᴏᴏɢʟᴇ)\n\n★ ɪғ ʏᴏᴜ ɴᴏᴛ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇ ɪɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴛʜᴇɴ ᴛʜᴇ ɴᴇxᴛ sᴛᴇᴘ ɪs ᴄʟɪᴄᴋ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ.\n\n★ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ", show_alert=True)
-
 
 @Client.on_message(filters.command('autofilter'))
 async def fil_mod(client, message): 
@@ -149,9 +138,9 @@ async def next_page(bot, query):
     ])
     btn.insert(1, 
          [           
-             InlineKeyboardButton(f'📟 ᴍᴏᴠɪᴇ', 'alimovie'),
-             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', 'aliseries'),
-             InlineKeyboardButton(f'🎁 ᴛɪᴘs', 'alitips')
+             InlineKeyboardButton(f'📟 ᴍᴏᴠɪᴇ', callback_data='movies'),
+             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', callback_data='series'),
+             InlineKeyboardButton(f'🎁 ᴛɪᴘs', callback_data='download')
          ]
     )
     try:
@@ -804,9 +793,9 @@ async def auto_filter(client, msg, spoll=False):
     ])
     btn.insert(1, 
          [           
-             InlineKeyboardButton(f'📟 ᴍᴏᴠɪᴇ', 'alimovie'),
-             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', 'aliseries'),
-             InlineKeyboardButton(f'🎁 ᴛɪᴘs', 'alitips')
+             InlineKeyboardButton(f'📟 ᴍᴏᴠɪᴇ', callback_data='movies'),
+             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', callback_data='series'),
+             InlineKeyboardButton(f'🎁 ᴛɪᴘs', callback_data='download')
          ]
     )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
