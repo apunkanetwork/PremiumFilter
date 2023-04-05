@@ -799,6 +799,13 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, [
         InlineKeyboardButton("😌 Cʜᴇᴄᴋ Bᴏᴛ PM 😌", url=f"https://t.me/{temp.U_NAME}")
     ])
+    btn.insert(1, 
+         [           
+             InlineKeyboardButton("📟 ᴍᴏᴠɪᴇ", callback_data="alimovie"),
+             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', callback_data="aliseries"),
+             InlineKeyboardButton(f'🎁 ᴛɪᴘs', callback_data="alitips")
+         ]
+    )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
     if imdb:
