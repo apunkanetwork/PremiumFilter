@@ -37,8 +37,10 @@ FILTER_MODE = {}
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "alimovie":
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ In ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Iron man\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)", show_alert=True)
+
     elif query.data == "aliseries":
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ Series ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴍᴏɴᴇʏ ʜᴇɪsᴛ S01E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)", show_alert=True)
+
     elif query.data == "alitips":
         await query.answer("▣ ᴛɪᴘs ▣\n\n★ ᴛʏᴘᴇ ᴄᴏʀʀᴇᴄᴛ sᴘᴇʟʟɪɴɢ (ɢᴏᴏɢʟᴇ)\n\n★ ɪғ ʏᴏᴜ ɴᴏᴛ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇ ɪɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴛʜᴇɴ ᴛʜᴇ ɴᴇxᴛ sᴛᴇᴘ ɪs ᴄʟɪᴄᴋ ɴᴇxᴛ ʙᴜᴛᴛᴏɴ.\n\n★ ᴄᴏɴᴛɪɴᴜᴇ ᴛʜɪs ᴍᴇᴛʜᴏᴅ ᴛᴏ ɢᴇᴛᴛɪɴɢ ʏᴏᴜ ғɪʟᴇ", show_alert=True)
 
@@ -146,9 +148,9 @@ async def next_page(bot, query):
     ])
     btn.insert(1, 
          [           
-             InlineKeyboardButton("📟 ᴍᴏᴠɪᴇ", callback_data="alimovie"),
-             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', callback_data="aliseries"),
-             InlineKeyboardButton(f'🎁 ᴛɪᴘs', callback_data="alitips")
+             InlineKeyboardButton('📟 ᴍᴏᴠɪᴇ', callback_data='alimovie'),
+             InlineKeyboardButton('🔰 sᴇʀɪᴇs', callback_data='aliseries'),
+             InlineKeyboardButton('🎁 ᴛɪᴘs', callback_data='alitips')
          ]
     )
     try:
@@ -801,9 +803,9 @@ async def auto_filter(client, msg, spoll=False):
     ])
     btn.insert(1, 
          [           
-             InlineKeyboardButton("📟 ᴍᴏᴠɪᴇ", callback_data="alimovie"),
-             InlineKeyboardButton(f'🔰 sᴇʀɪᴇs', callback_data="aliseries"),
-             InlineKeyboardButton(f'🎁 ᴛɪᴘs', callback_data="alitips")
+             InlineKeyboardButton('📟 ᴍᴏᴠɪᴇ', callback_data='alimovie'),
+             InlineKeyboardButton('🔰 sᴇʀɪᴇs', callback_data='aliseries'),
+             InlineKeyboardButton('🎁 ᴛɪᴘs', callback_data='alitips')
          ]
     )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
