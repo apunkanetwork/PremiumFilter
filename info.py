@@ -12,8 +12,8 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'File_store')
-API_ID = int(environ.get('API_ID', '7184257'))
-API_HASH = environ.get('API_HASH', '00db684ac4ab37587f5395581ae3a9c8')
+API_ID = int(environ.get('API_ID', '23937617'))
+API_HASH = environ.get('API_HASH', 'cdc408c8bf00c9c2219fee9cd585bbda')
 BOT_TOKEN = environ.get('BOT_TOKEN', '5480894070:AAGOulqbcNjpspFxsXkprI8fIZvZVIWQ5XE')
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -31,8 +31,8 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Autofilter56:Autofilter56@cluster0.vwcbc3p.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Autofilter56")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://OximeStorage:OximeStorage@cluster0.71k2bsv.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "OximeStorage")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
